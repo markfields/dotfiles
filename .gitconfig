@@ -17,96 +17,96 @@
 
 [core]
 	# Sensible cross-platform line ending handling
-	autocrlf   = input          # convert CRLF → LF on commit; leave LF alone
-	safecrlf   = warn
-	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	# autocrlf   = input          # convert CRLF → LF on commit; leave LF alone
+	# safecrlf   = warn
+	# whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 
 	# Faster status/diff on large repos
-	fsmonitor  = true
-	untrackedCache = true
+	# fsmonitor  = true
+	# untrackedCache = true
 
 	# Pager — plain less by default; delta below is much nicer
-	pager = less -FRX
+	# pager = less -FRX
 
 	# Editor for commit messages
-	editor = code --wait
+	# editor = code --wait
 
 	# Global gitignore (path below is set by install.sh)
-	excludesfile = ~/.gitignore_global
+	# excludesfile = ~/.gitignore_global
 
 	# Avoid "dubious ownership" warnings when repo owner ≠ current user
 	# trustctime = false
 
 [init]
-	defaultBranch = main
+	# defaultBranch = main
 
 [pull]
-	rebase = false   # merge by default; change to `true` or `ff-only` if preferred
+	# rebase = false   # merge by default; change to `true` or `ff-only` if preferred
 
 [push]
-	default        = current    # push current branch to same-name remote branch
-	autoSetupRemote = true      # automatically set upstream on first push
+	# default        = current    # push current branch to same-name remote branch
+	# autoSetupRemote = true      # automatically set upstream on first push
 
 [fetch]
-	prune = true    # remove remote-tracking branches that no longer exist
+	# prune = true    # remove remote-tracking branches that no longer exist
 
 [merge]
-	tool           = vscode
-	conflictstyle  = zdiff3     # shows the common ancestor in conflict markers
+	# tool           = vscode
+	# conflictstyle  = zdiff3     # shows the common ancestor in conflict markers
 
-[mergetool "vscode"]
-	cmd = code --wait $MERGED
+# [mergetool "vscode"]
+# 	cmd = code --wait $MERGED
 
 [diff]
-	tool        = vscode
-	algorithm   = histogram    # better diff for moved code
-	colorMoved  = default
+	# tool        = vscode
+	# algorithm   = histogram    # better diff for moved code
+	# colorMoved  = default
 
-[difftool "vscode"]
-	cmd = code --wait --diff $LOCAL $REMOTE
+# [difftool "vscode"]
+# 	cmd = code --wait --diff $LOCAL $REMOTE
 
 [rebase]
-	autosquash   = true    # automatically apply fixup!/squash! prefixes
-	autostash    = true    # stash/pop dirty working tree around rebase
-	updateRefs   = true    # update intermediate refs when rebasing a stack
+	# autosquash   = true    # automatically apply fixup!/squash! prefixes
+	# autostash    = true    # stash/pop dirty working tree around rebase
+	# updateRefs   = true    # update intermediate refs when rebasing a stack
 
 [branch]
-	sort = -committerdate   # show most recently committed branches first
+	# sort = -committerdate   # show most recently committed branches first
 
 [tag]
-	sort = -version:refname  # sort tags by version descending
+	# sort = -version:refname  # sort tags by version descending
 
 [status]
-	showUntrackedFiles = all  # show individual files in untracked dirs
+	# showUntrackedFiles = all  # show individual files in untracked dirs
 
 [log]
-	date = relative
+	# date = relative
 
 [color]
-	ui     = auto
-	branch = auto
-	diff   = auto
-	status = auto
+	# ui     = auto
+	# branch = auto
+	# diff   = auto
+	# status = auto
 
-[color "branch"]
-	current = yellow bold
-	local   = green bold
-	remote  = cyan bold
+# [color "branch"]
+# 	current = yellow bold
+# 	local   = green bold
+# 	remote  = cyan bold
 
-[color "diff"]
-	meta       = yellow bold
-	frag       = magenta bold
-	old        = red bold
-	new        = green bold
-	whitespace = red reverse
+# [color "diff"]
+# 	meta       = yellow bold
+# 	frag       = magenta bold
+# 	old        = red bold
+# 	new        = green bold
+# 	whitespace = red reverse
 
-[color "status"]
-	added     = green bold
-	changed   = yellow bold
-	untracked = red bold
+# [color "status"]
+# 	added     = green bold
+# 	changed   = yellow bold
+# 	untracked = red bold
 
 [credential]
-	helper = osxkeychain    # macOS; change to `manager` on Windows, `store` on Linux
+	# helper = osxkeychain    # macOS; change to `manager` on Windows, `store` on Linux
 
 # =============================================================================
 # ALIASES — git shortcuts

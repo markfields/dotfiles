@@ -5,63 +5,63 @@
 # WebStorm, and many others.  Reference: https://editorconfig.org
 # =============================================================================
 
-root = true
+# root = true
 
 # ---- Defaults for all files ------------------------------------------------
-[*]
-charset             = utf-8
-end_of_line         = lf
-indent_style        = space
-indent_size         = 2
-trim_trailing_whitespace = true
-insert_final_newline = true
+# [*]
+# charset             = utf-8
+# end_of_line         = lf
+# indent_style        = space
+# indent_size         = 2
+# trim_trailing_whitespace = true
+# insert_final_newline = true
 
 # ---- JavaScript / TypeScript -----------------------------------------------
-[*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}]
-indent_style = space
-indent_size  = 2
+# [*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}]
+# indent_style = space
+# indent_size  = 2
 
 # ---- JSON ------------------------------------------------------------------
-[*.{json,jsonc,json5}]
-indent_style = space
-indent_size  = 2
+# [*.{json,jsonc,json5}]
+# indent_style = space
+# indent_size  = 2
 
 # ---- YAML ------------------------------------------------------------------
-[*.{yml,yaml}]
-indent_style = space
-indent_size  = 2
+# [*.{yml,yaml}]
+# indent_style = space
+# indent_size  = 2
 
 # ---- HTML / CSS / SCSS -----------------------------------------------------
-[*.{html,css,scss,sass,less}]
-indent_style = space
-indent_size  = 2
+# [*.{html,css,scss,sass,less}]
+# indent_style = space
+# indent_size  = 2
 
 # ---- Markdown --------------------------------------------------------------
-[*.{md,mdx}]
-trim_trailing_whitespace = false   # trailing spaces are meaningful in Markdown
-indent_size              = 2
+# [*.{md,mdx}]
+# trim_trailing_whitespace = false   # trailing spaces are meaningful in Markdown
+# indent_size              = 2
 
 # ---- Python (PEP 8 uses 4 spaces) ------------------------------------------
-[*.py]
-indent_size = 4
+# [*.py]
+# indent_size = 4
 
 # ---- Go (uses tabs) --------------------------------------------------------
-[*.go]
-indent_style = tab
+# [*.go]
+# indent_style = tab
 
 # ---- Rust ------------------------------------------------------------------
-[*.rs]
-indent_size = 4
+# [*.rs]
+# indent_size = 4
 
 # ---- Shell scripts ---------------------------------------------------------
-[*.{sh,bash,zsh}]
-indent_size = 2
+# [*.{sh,bash,zsh}]
+# indent_size = 2
 
 # ---- Makefiles (require tabs) ----------------------------------------------
-[Makefile]
-indent_style = tab
+# [Makefile]
+# indent_style = tab
 
 # ---- Package lock files (auto-generated; don't reformat) ------------------
-[{package-lock.json,yarn.lock,pnpm-lock.yaml}]
-indent_size  = unset
-insert_final_newline = unset
+# [{package-lock.json,yarn.lock,pnpm-lock.yaml}]
+# indent_size  = unset
+# insert_final_newline = unset
