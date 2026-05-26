@@ -1,5 +1,7 @@
 # dotfiles
 
+**GUID: `4e079e8c-dadd-47fc-9582-0914483981ea`** — grep for this string to locate any installed dotfile on any machine.
+
 Personal dotfiles for a TypeScript / Node.js developer. Optimised for a **fast,
 git-aware shell** with plenty of commented-out tutorial sections you can browse
 with Copilot and enable a piece at a time.
