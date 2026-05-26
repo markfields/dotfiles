@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # dotfiles-guid: 4e079e8c-dadd-47fc-9582-0914483981ea
 # =============================================================================
-# install.sh — bootstrap dotfiles by symlinking them into $HOME
+# bootstrap.sh — bootstrap dotfiles by symlinking them into $HOME
 # =============================================================================
 # Usage:
-#   ./install.sh          # dry run (shows what would happen)
-#   ./install.sh --apply  # actually create symlinks
+#   ./bootstrap.sh          # dry run (shows what would happen)
+#   ./bootstrap.sh --apply  # actually create symlinks
 #
 # What it does:
 #   • Symlinks every file listed in FILES below from this repo into $HOME
@@ -109,6 +109,6 @@ if [[ "${APPLY}" == true ]]; then
   echo -e "${GREEN}${BOLD}Done!${RESET} Dotfiles installed."
   echo "  Reload your shell:  source ~/.zshrc"
 else
-  echo -e "Run ${BOLD}./install.sh --apply${RESET} to apply the above changes."
+  echo -e "Run ${BOLD}./bootstrap.sh --apply${RESET} to apply the above changes."
 fi
 echo

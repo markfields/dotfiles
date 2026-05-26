@@ -20,7 +20,7 @@ Inspired by / further reading: <https://dotfiles.github.io/>
 | `.gitignore_global` | Global ignore patterns (macOS, editors, Node/TS artefacts) |
 | `.npmrc` | npm defaults (global prefix, init values) |
 | `.editorconfig` | Cross-editor formatting baseline |
-| `install.sh` | Symlinks every file above into `$HOME` |
+| `bootstrap.sh` | Symlinks every file above into `$HOME` |
 
 ---
 
@@ -32,10 +32,10 @@ git clone https://github.com/markfields/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 
 # 2. Dry run — see what would change
-./install.sh
+./bootstrap.sh
 
 # 3. Apply
-./install.sh --apply
+./bootstrap.sh --apply
 
 # 4. Reload
 source ~/.zshrc
