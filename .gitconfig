@@ -1,0 +1,206 @@
+# dotfiles-guid: 4e079e8c-dadd-47fc-9582-0914483981ea
+# =============================================================================
+# ~/.gitconfig — global Git configuration
+# =============================================================================
+# This file is managed by dotfiles.  Machine-specific overrides go in
+# ~/.gitconfig.local (included at the bottom of this file).
+#
+# Run `git config --list --show-origin` to see the current resolved config.
+# =============================================================================
+
+[user]
+	# Set your name and email here — or override in ~/.gitconfig.local
+	# name  = Your Name
+	# email = you@example.com
+
+	# GPG signing (uncomment after setting up a key)
+	# signingkey = <your-key-id>
+
+[core]
+	# Sensible cross-platform line ending handling
+	# autocrlf   = input          # convert CRLF → LF on commit; leave LF alone
+	# safecrlf   = warn
+	# whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+
+	# Faster status/diff on large repos
+	# fsmonitor  = true
+	# untrackedCache = true
+
+	# Pager — plain less by default; delta below is much nicer
+	# pager = less -FRX
+
+	# Editor for commit messages
+	# editor = code --wait
+
+	# Global gitignore (path below is set by install.sh)
+	# excludesfile = ~/.gitignore_global
+
+	# Avoid "dubious ownership" warnings when repo owner ≠ current user
+	# trustctime = false
+
+[init]
+	# defaultBranch = main
+
+[pull]
+	# rebase = false   # merge by default; change to `true` or `ff-only` if preferred
+
+[push]
+	# default        = current    # push current branch to same-name remote branch
+	# autoSetupRemote = true      # automatically set upstream on first push
+
+[fetch]
+	# prune = true    # remove remote-tracking branches that no longer exist
+
+[merge]
+	# tool           = vscode
+	# conflictstyle  = zdiff3     # shows the common ancestor in conflict markers
+
+# [mergetool "vscode"]
+# 	cmd = code --wait $MERGED
+
+[diff]
+	# tool        = vscode
+	# algorithm   = histogram    # better diff for moved code
+	# colorMoved  = default
+
+# [difftool "vscode"]
+# 	cmd = code --wait --diff $LOCAL $REMOTE
+
+[rebase]
+	# autosquash   = true    # automatically apply fixup!/squash! prefixes
+	# autostash    = true    # stash/pop dirty working tree around rebase
+	# updateRefs   = true    # update intermediate refs when rebasing a stack
+
+[branch]
+	# sort = -committerdate   # show most recently committed branches first
+
+[tag]
+	# sort = -version:refname  # sort tags by version descending
+
+[status]
+	# showUntrackedFiles = all  # show individual files in untracked dirs
+
+[log]
+	# date = relative
+
+[color]
+	# ui     = auto
+	# branch = auto
+	# diff   = auto
+	# status = auto
+
+# [color "branch"]
+# 	current = yellow bold
+# 	local   = green bold
+# 	remote  = cyan bold
+
+# [color "diff"]
+# 	meta       = yellow bold
+# 	frag       = magenta bold
+# 	old        = red bold
+# 	new        = green bold
+# 	whitespace = red reverse
+
+# [color "status"]
+# 	added     = green bold
+# 	changed   = yellow bold
+# 	untracked = red bold
+
+[credential]
+	# helper = osxkeychain    # macOS; change to `manager` on Windows, `store` on Linux
+
+# =============================================================================
+# ALIASES — git shortcuts
+# =============================================================================
+
+[alias]
+	# Basics
+	s  = status -sb
+	a  = add
+	aa = add --all
+	c  = commit
+	cm = commit -m
+	ca = commit --amend
+	can = commit --amend --no-edit
+
+	# Branches
+	co  = checkout
+	sw  = switch
+	swc = switch -c           # create and switch
+	b   = branch
+	ba  = branch -a
+	bd  = branch -d
+
+	# Stash
+	st  = stash
+	stp = stash pop
+	stl = stash list
+
+	# Diff / log
+	d   = diff
+	ds  = diff --staged
+	dc  = diff --cached
+	lg  = log --oneline --graph --decorate --all
+	lgg = log --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
+	last = log -1 HEAD --stat
+
+	# Remote
+	p   = push
+	pf  = push --force-with-lease
+	pu  = pull
+	f   = fetch --all --prune
+
+	# Convenience
+	unstage = restore --staged
+	discard = restore
+	aliases = config --get-regexp alias
+	ignored = ls-files --others --ignored --exclude-standard
+	root    = rev-parse --show-toplevel
+
+	# Find the commit that introduced a string
+	find    = log -S
+	# List contributors by commit count
+	contributors = shortlog -sn --no-merges
+
+	# Undo last commit (keep changes staged)
+	uncommit = reset --soft HEAD~1
+
+	# Create a throwaway "wip" commit
+	wip  = "!git add -A && git commit -m 'WIP'"
+	unwip = "!git log -n 1 | grep -q -c WIP && git reset HEAD~1"
+
+
+# =============================================================================
+# DELTA — a better diff pager (https://github.com/dandavison/delta)
+# =============================================================================
+# Install: brew install git-delta
+# Uncomment the block below to enable it.
+#
+# [core]
+# 	pager = delta
+#
+# [interactive]
+# 	diffFilter = delta --color-only
+#
+# [delta]
+# 	navigate    = true   # n/N to move between diff sections
+# 	side-by-side = true
+# 	line-numbers = true
+# 	syntax-theme = Dracula
+#
+# [merge]
+# 	conflictstyle = zdiff3
+
+
+# =============================================================================
+# GITHUB CLI / gh — https://cli.github.com
+# =============================================================================
+# [url "git@github.com:"]
+# 	insteadOf = https://github.com/   # use SSH for GitHub repos
+
+
+# =============================================================================
+# LOCAL OVERRIDES — user.name, user.email, work configs, etc.
+# =============================================================================
+[include]
+	path = ~/.gitconfig.local
